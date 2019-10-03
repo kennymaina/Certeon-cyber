@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    
+<div class="navbar">
+        <a href="{% url 'home' %}" >Certeon-Tech</a>
+          </div>
+<div style="border: 1px solid darkgreen; border-radius: 2px; padding:10px; text-align: center;">
+    <div><strong>SUBSCRIBE</strong></div>
+    <div style="margin-bottom: 10px;">Please subscribe to get the latest articles in your mailbox.</div>
+    <div>
+        <form action="{% url 'newsletter' %}" method="post" class="form-horizontal">
+            {% csrf_token %}
+            <input type="email" name="email" class="form-control" placeholder="Your Email ID Please" required>
+            <br>
+            <input type="submit" value="Subscribe" class="btn btn-primary btn-sm">
+        </form>
+    </div>
+</div>
+<style>
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+</style>
+
+</body>
+
+{% endblock %}

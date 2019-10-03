@@ -1,0 +1,109 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<head>
+        <style>
+                img {
+                  align-content: center;
+                  float: right;
+                }
+                h3{
+                   text-align: center;           
+                }
+                p2{
+                    text-align: center;
+                }
+                p3{
+                    float: right;
+                }
+                .sidenav a {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                font-size: 15px;
+                color: #2196F3;
+                display: block;
+               }
+               .sidenav a:hover {
+                color: #064579;
+               }
+               .main {
+                margin-left: 140px; /* Same width as the sidebar + left position in px */
+                font-size: 15px; /* Increased text to enable scrolling */
+                padding: 0px 10px;
+                }
+                @media screen and (max-height: 450px) {
+                .sidenav {padding-top: 15px;}
+                .sidenav a {font-size: 18px;}
+                }
+
+
+footer{
+  background-color: darkgray;
+}
+
+                </style>
+
+
+</head>
+
+<body>
+        <h2>Kenyan Made</h2>
+
+        <div class="sidenav">
+                <a href="/newsletter">Newsletter</a>
+                <a href="/download">Download</a>
+                <a href="/contact">Contact</a>
+                <a href="/careers">Creers</a>
+
+              </div>
+        <div class="main">     
+        <p>
+        In this example, the image will float to the right in the paragraph, and the text in the paragraph will wrap around the image
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, 
+        <br>
+        <br>
+       
+        vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, 
+        ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet.
+        <br>
+        <br>
+       
+        Mauris ante ligula, 
+        facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. 
+       </p>
+     </div>
+        
+
+        <img src="https://agamsecurity.ch/en/wp-content/uploads/sites/3/2016/05/hexagonecodeblanc.svg" alt="" style="width:570px;height:270px;margin-left:2px;">
+       
+        <h3>we offer</h3>
+        <p2>
+        <ul>
+           <ul>Python programing</ul> 
+           <ul>Python programing</ul> 
+           <ul>Python programing</ul> 
+           <ul>Python programing</ul> 
+           <br>
+           <br>
+        </ul>
+        </p2> 
+        
+
+        <img src="https://agamsecurity.ch/en/wp-content/uploads/sites/3/2016/05/backtwo-e1462819106591.png" alt=""  style="width:570px;height:270px;margin-left:2px;">
+        <p3>
+        <ul>
+        <li>A high-level technical and organizational expertise, through a security audit</li>
+        <li>A high-level technical and organizational expertise, through a security audit</li>
+
+       </ul>
+        </p3>
+        
+
+        
+        </body>
+
+
+{% endblock %}

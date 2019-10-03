@@ -1,0 +1,257 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap3 %}
+
+  {% block content %}
+
+
+  <head>
+        <title></title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            $("#btnPrint").live("click", function () {
+                var divContents = $("#dvContainer").html();
+                var printWindow = window.open('', '', 'height=400,width=800');
+                printWindow.document.write('<html><head><title>Download</title>');
+                printWindow.document.write('</head><body >');
+                printWindow.document.write(divContents);
+                printWindow.document.write('</body></html>');
+                printWindow.document.close();
+                printWindow.print();
+            });
+        </script>
+<style>
+    .download{
+        background-color: blue; /* Green */
+        border: none;
+        color: blue;
+        padding: 75px 82px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+        .navbar {
+  overflow: hidden;
+  background-color: #1EBBEE;
+}
+
+button{
+  color: green
+}
+.click{
+  font-size: 16px;
+  padding: 75px 82px;
+  text-align: center;
+  color: green
+
+        }
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+p{
+  text-align: center;
+  font-size: 17px;
+}
+.img{
+  padding: 14px 16px;
+text-align: center;
+}
+body{
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+footer{
+  background-color: grey;
+}
+.cert{
+  float: left;
+}
+</style>
+    </head>
+    <body>
+            <div class="navbar">
+              <div class="cert">
+                    <a href="{% url 'home' %}" >Certeon-Tech</a>
+                  </div>    
+                  </div>
+        <form id="form1">
+        <div id="dvContainer">
+            
+                  <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco </p>
+                   <p></p>  
+                   <p> laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>  
+                   <p></p>  
+                   <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
+                   <p> Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. </p>
+                   <p>The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's
+                      <p>De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with:</p>
+                <br>
+                <br>
+                <br>
+                <div class="img">
+                 <font color='green'> <strong><h2>click this button to download content as pdf</h2></strong></font>
+                <img src="https://media.tenor.com/images/267122b38ed9e140b94a72c40b27ec4a/tenor.gif" alt="" width="90px" height="95px">
+              </div>
+                <div class="click">
+                    <button> <input type="button" value="Download" id="btnPrint" />  </button>
+                    <!-- <input type="button" value="Download" id="btnPrint" /> -->
+                    
+                  </div>  
+        </div>
+        
+    </form>
+   <footer >
+
+            <div class="container">
+        
+              <!-- Grid row-->
+              <div class="row py-4 d-flex align-items-center">
+        
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                  <h6 class="mb-0"></h6>
+                </div>
+                <!-- Grid column -->
+        
+                 <!-- Grid column -->
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
+        
+                  <!-- Facebook -->
+                  <a class="fb-ic">
+                    <i class="fab fa-facebook-f white-text mr-4"> </i>
+                  </a>
+                  <!-- Twitter -->
+                  <a class="tw-ic">
+                    <i class="fab fa-twitter white-text mr-4"> </i>
+                  </a>
+                  <!-- Google +-->
+                  <a class="gplus-ic">
+                    <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                  </a>
+                  <!--Linkedin -->
+                  <a class="li-ic">
+                    <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                  </a>
+                  <!--Instagram-->
+                  <a class="ins-ic">
+                    <i class="fab fa-instagram white-text"> </i>
+                  </a>
+        
+                </div>
+                <!-- Grid column -->
+        
+              </div>
+              <!-- Grid row-->
+        
+            </div>
+         
+        
+          <!-- Footer Links -->
+          <div class="container text-center text-md-left mt-5">
+        
+            <!-- Grid row -->
+            <div class="row mt-3">
+        
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        
+                <!-- Content -->
+                <h6 class="text-uppercase font-weight-bold">Certeon Technologies</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>.</p>
+        
+              </div>
+              <!-- Grid column -->
+        
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Products</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                  <!-- <a href="#!">MDBootstrap</a> -->
+                </p>
+                <p>
+                  <a href="#!">WordPress</a>
+                </p>
+                <p>
+                  <a href="#!">Location</a>
+                </p>
+                <p>
+                  <a href="#!">partners</a>
+                </p>
+        
+              </div>
+              <!-- Grid column -->
+        
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                  <a href="#!">Our website</a>
+                </p>
+                <p>
+                  <!-- <a href="#!">Become an Affiliate</a> -->
+                </p>
+                <p>
+                  <!-- <a href="#!">Shipping Rates</a> -->
+                </p>
+                <p>
+                  <!-- <a href="#!">Help</a> -->
+                </p>
+        
+              </div>
+              <!-- Grid column -->
+        
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                  <i class="fas fa-home mr-3"></i>NAIROBI  KE</p>
+                <p>
+                  <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                <p>
+                  <i class="fas fa-phone mr-3"></i> +254 712 456 789</p>
+                <p>
+                  <i class="fas fa-print mr-3"></i> + 254 712 456 789</p>
+        
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        
+          </div>
+          <!-- Footer Links -->
+        
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/"></a>
+          </div>
+          <!-- Copyright -->
+        
+      
+  
+        </footer>
+    </body>
+  
+
+{% endblock %}
