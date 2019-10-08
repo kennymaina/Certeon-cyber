@@ -8,14 +8,15 @@ from django.template.loader import get_template
 from django.core.mail import EmailMessage
 from django.views.generic import View
 from .utils import render_to_pdf
-from .forms import NewsUserForm
+from .forms import  NewsLetterForm
 from django.core.mail import send_mail
-from . models import NewsUsers
+from . models import NewsLetterRecipients
 from django.contrib.auth.decorators import login_required
+from .forms import NewsLetterForm
 
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def home(request):
     return render(request, 'home.html')
 
@@ -121,7 +122,7 @@ def newsletter(request):
             instance = form.save()
         else:
                 print('your email is already added to our database')
-                send_mail('Laughing blog tutorial series', 'welcome', 'mail@achiengcindy.com',[instance.email], fail_silently=False) 
+                send_mail('this is certeon technologies', 'welcome', 'mail@achiengcindy.com',[instance.email], fail_silently=False) 
     return render(request, 'subscribe.html', {})
 
 
@@ -129,36 +130,17 @@ def newsletter(request):
 
 
 
+def news(request):
+    if request.method == 'POST':
+        form = NewsLetterForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            instance = form.save()
+            recipient = NewsLetterRecipients(name = name,email =email)
+            recipient.save()
+            HttpResponseRedirect('news')
+    else:
+        form = NewsLetterForm()
+    return render(request, 'subscription.html',{"letterForm":form})
 
-
-
-
-
-
-
-
-
-
-
-
-# class GeneratePDF(View):
-#     def get(self, request, *args, **kwargs):
-#         template = get_template('invoice.html')
-#         context = {
-#             "invoice_id": 123,
-#             "customer_name": "John Cooper",
-#             "amount": 1399.99,
-#             "today": "Today",
-#         }
-#         html = template.render(context)
-#         pdf = render_to_pdf('download.html', context)
-#         if pdf:
-#             response = HttpResponse(pdf, content_type='application/pdf')
-#             filename = "Invoice_%s.pdf" %("12341231")
-#             content = "inline; filename='%s'" %(filename)
-#             download = request.GET.get("download")
-#             if download:
-#                 content = "attachment; filename='%s'" %(filename)
-#             response['Content-Disposition'] = content
-#             return response
-#         return HttpResponse("Not found")
