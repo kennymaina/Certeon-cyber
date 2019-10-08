@@ -55,8 +55,17 @@ def offer(request):
     # return render(request, 'home.html',locals())
     return render(request, 'offer.html')
 
+def touch(request):
+    # current_user = request.user
+    # w= Profile.objects.all()
+    # return render(request, 'home.html',locals())
+    return render(request, 'touch.html')
 
-
+def cert(request):
+    # current_user = request.user
+    # w= Profile.objects.all()
+    # return render(request, 'home.html',locals())
+    return render(request, 'cert.html')
 
 
 def contact(request):
@@ -115,15 +124,15 @@ def generate_view(request, *args, **kwargs):
     return HttpResponse(html)
 
 
-def newsletter(request):
-    if request.method == 'POST':
-        form = NewsUserForm(request.POST)
-        if form.is_valid():
-            instance = form.save()
-        else:
-                print('your email is already added to our database')
-                send_mail('this is certeon technologies', 'welcome', 'mail@achiengcindy.com',[instance.email], fail_silently=False) 
-    return render(request, 'subscribe.html', {})
+# def newsletter(request):
+#     name = request.POST.get('your_name')
+#     email = request.POST.get('email')
+
+#     recipient = NewsLetterRecipients(name=name, email=email)
+#     recipient.save()
+#     send_welcome_email(name, email)
+#     data = {'success': 'You have been successfully added to mailing list'}
+#     return JsonResponse(data)
 
 
 
