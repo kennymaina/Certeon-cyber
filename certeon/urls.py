@@ -7,7 +7,9 @@ urlpatterns=[
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^about/', views.about, name='about us'),
     url(r'^download/', views.generate_view, name='download'),
-    url(r'^newsletter/', views.newsletter, name='newsletter'),
+    # url(r'^newsletter/', views.newsletter, name='newsletter'),
+    url(r'^news/', views.news, name='news'),
+
     url(r'^offer/', views.offer, name='offer'),
     url(r'^great/', views.great, name='great'),
 
