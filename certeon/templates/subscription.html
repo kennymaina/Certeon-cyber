@@ -1,0 +1,56 @@
+{%extends 'base.html'%} 
+{% load bootstrap3 %}
+<!-- Some content here-->
+{% block content %}
+
+  
+<div class="navbar">
+  <a href="{% url 'home' %}" >Certeon-Tech</a>
+    </div>
+<!-- Looping through news end   -->
+<div class="container-fluid">
+    <div style="border: 1px solid #1EBBEE; border-radius: 2px; padding:30px; text-align: center;">
+
+    <div class="header"><strong>Subscribe to our newsletter</strong></div>
+    <br>
+    <br>
+    <br>
+
+ <div class="column">
+  <form  action="{%url 'news'%}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="name" name="name" class="form-control" placeholder="Your FirstName" required>
+   <br>
+   <br>
+
+    <input type="email" name="email" class="form-control" placeholder="Your Email ID Please" required>
+    <br>
+    <br>
+    <input type="submit" value="Subcribe" >
+    
+  </form>
+</div>
+</div>
+
+</div>
+<style>
+  .navbar {
+    overflow: hidden;
+    background-color: #1EBBEE;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .header{
+    text-align: center;
+  }
+  </style>
+
+{% endblock %}
