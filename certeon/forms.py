@@ -1,6 +1,6 @@
 from django import forms
 from .models import *
-from .models import NewsUsers
+from .models import NewsLetterRecipients
 
 
 class ContactForm(forms.Form):
@@ -19,7 +19,16 @@ class ContactForm(forms.Form):
         self.fields['contact_email'].label = "Your email:"
         self.fields['content'].label = "comment?"
 
-class NewsUserForm(forms.ModelForm):
+# class NewsUserForm(forms.ModelForm):
+#     class Meta:
+#         model = NewsUsers
+#         fields = ['email']
+
+
+
+
+class NewsLetterForm(forms.ModelForm):
     class Meta:
-        model = NewsUsers
-        fields = ['email']
+        model = NewsLetterRecipients
+        fields = "__all__"
+      
