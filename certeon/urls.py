@@ -12,6 +12,11 @@ urlpatterns=[
 
     url(r'^offer/', views.offer, name='offer'),
     url(r'^great/', views.great, name='great'),
+    url(r'^touch/', views.touch, name='touch'),
+    url(r'^cert/', views.cert, name='cert'),
+
+
+    # url(r'^ajax/news/$', views.news, name='news'),
 
 
 
